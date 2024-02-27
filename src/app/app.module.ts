@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ChatbotUiComponent } from './components/chatbot-ui/chatbot-ui.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatbotUiComponent
   ],
   imports: [
     BrowserModule,
