@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot-ui',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./chatbot-ui.component.less']
 })
 export class ChatbotUiComponent {
+textContent:string='';
+@HostListener('document:keydown.enter',['$event'])
+handleEnterKey(event:KeyboardEvent){
+  this.submitText()
 
+}
+submitText(){
+  if(this.textContent.trim() !==''){
+    console.log('data--->',this.textContent)
+    this.textContent=''
+  }
+}
 }
