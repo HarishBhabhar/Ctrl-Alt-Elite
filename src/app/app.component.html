@@ -1,2 +1,2 @@
-<app-chatbot-ui></app-chatbot-ui>
-<!-- <app-new-user></app-new-user> -->
+<app-chatbot-ui (showNew)="showNewUser($event)"  *ngIf="!showUser"></app-chatbot-ui>
+<app-new-user *ngIf="showUser" (showNew)="dataFromNewUser($event)"></app-new-user>

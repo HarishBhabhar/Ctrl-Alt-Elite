@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Ctrl-Alt-Elite';
+  showUser:boolean=false;
+  showNewUser(event:any){
+    this.showUser=!this.showUser;
+  }
+  dataFromNewUser(event:any){
+    this.showUser=!this.showUser;
+  }
 }

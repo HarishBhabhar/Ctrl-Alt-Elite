@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot-ui',
@@ -7,6 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class ChatbotUiComponent {
 textContent:string='';
+@Output()showNew=new EventEmitter()
 chatHistory: { userMessage: string, botResponse: string }[] = [];
 userMessage: any = '';
 botResponse: string = '';
@@ -18,15 +19,17 @@ navigateToScheduled(type:any){
  }
 services:any = ['Service Virtualization','API Monitoring','Rover','Web Testing','Desktop Testing','Device Farm','API Testing','Mobile Testing','Component','Webpage Performance']
 sendMessage() {
-  this.activeTab='bot'
+   this.activeTab='bot'
   this.botResponse = this.generateFakeBotResponse(this.userMessage);
   this.chatHistory.push({ userMessage: this.userMessage, botResponse: this.botResponse });
   this.userMessage = '';
 
 }
-
+showNewUser(){
+  this.showNew.emit(true)
+}
 generateFakeBotResponse(userMessage: string): string {
-  return "I'm a fake bot response to: " + userMessage;
+  return "Hello, I'm QonvoBot responding to" + userMessage;
 }
 getService(service:string){
   this.servicesName=service

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-new-user',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-user.component.less']
 })
 export class NewUserComponent {
+@Output()showNew=new EventEmitter()
 
+  showNewUser(){
+    this.showNew.emit(true)
+  }
 }
