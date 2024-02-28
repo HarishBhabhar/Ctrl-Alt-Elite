@@ -5,9 +5,9 @@
     height: 95vh;
 }
 .left-sidebar {
-    width: 200px;
+    width: 217px;
     position: relative;
-    height: 100vh !important;
+    height: 90vh !important;
     padding: 15px;
 }
 
@@ -33,10 +33,6 @@
     }
 }
 
-nav {
-    width: fit-content;
-}
-
 .nav-tabs {
     border-bottom: 1px solid #ef6a36;
 }
@@ -60,12 +56,11 @@ nav {
 
 
 footer {
-    position: fixed;
-    height: 80px;
+    position: absolute;
     border-top: 1px solid #3c3a3a;
     color: #e2e8ef;
     bottom: 0;
-    width: 170px;
+    width: 96%;
     padding: 10px;
 }
 
@@ -88,10 +83,6 @@ header {
 
 .body {
     background: #f7f7f7;
-    background-size: 95%;
-    background-repeat: no-repeat;
-    background-position: right top;
-    padding: 13px !important;
 }
 
 
@@ -120,7 +111,7 @@ header {
 
     .status {
         color: #fff;
-        padding-left: 80px;
+        padding-left: 50px;
         height: 25vh;
         position: relative;
 
@@ -128,7 +119,7 @@ header {
             width: 26px;
             position: absolute;
             z-index: 13;
-            left: 38px;
+            left: 14px;
             height: 26px;
             background-color: #f7f7f7;
             display: flex;
@@ -147,7 +138,7 @@ header {
             width: 4px;
             background: #f7f7f7;
             position: absolute;
-            left: 50px;
+            left: 25px;
             top: 19px;
         }
 
@@ -177,9 +168,17 @@ header {
     }
 }
 
+.action-panel{
+    position: absolute;
+    width: 95%;
+    bottom: 128px;
+}
+
 
 .type-message {
-    margin-bottom: 40px;
+    position: absolute;
+    width: 96%;
+    bottom: 70px;
 
     .icon {
         display: flex;
@@ -214,8 +213,7 @@ header {
 .chat-section {
   border: 1px solid #ccc;
   padding: 10px;
-  margin-top: 20px;
-  max-height: 300px;
+  height: 53vh;
   overflow-y: auto;
 }
 
@@ -243,3 +241,32 @@ header {
   margin-bottom: 5px;
 }
 
+.chat-section{
+    border: none;
+}
+
+.user-message{
+    align-self: flex-end;
+    background-color: #e6e6e6;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-bottom: 5px;
+    text-align: right;
+    width: fit-content;
+    font-size: 13px;
+}
+
+.bot-message{
+    width: fit-content;
+    padding: 2px 5px;
+    font-size: 13px;
+}
+.spinner-grow{
+    width: 1rem;
+    height: 1rem;
+}
+
+.h-100vh{
+    height: 100vh;
+}
