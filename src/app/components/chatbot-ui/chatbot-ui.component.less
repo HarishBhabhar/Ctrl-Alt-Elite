@@ -101,7 +101,6 @@ header {
 
 .status-bar {
     position: relative;
-    height: 100vh;
     padding: 0;
     margin: 20px 0;
 
@@ -139,15 +138,11 @@ header {
             background: #f7f7f7;
             position: absolute;
             left: 25px;
-            top: 19px;
+            bottom: 0;
         }
 
-        &:last-of-type {
+        &:last-of-type{
             height: auto;
-
-            &::after {
-                display: none;
-            }
         }
 
         &.done {
@@ -170,15 +165,17 @@ header {
 
 .action-panel{
     position: absolute;
-    width: 95%;
-    bottom: 128px;
+    width: 97%;
+    bottom: 60px;
+    left: 15px;
 }
 
 
 .type-message {
     position: absolute;
-    width: 96%;
-    bottom: 70px;
+    width: 97%;
+    bottom: 0;
+    left: 15px;
 
     .icon {
         display: flex;
@@ -213,7 +210,7 @@ header {
 .chat-section {
   border: 1px solid #ccc;
   padding: 10px;
-  height: 53vh;
+  height: 52vh;
   overflow-y: auto;
 }
 
