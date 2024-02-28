@@ -19,20 +19,19 @@
 
         <nav class="px-2">
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"  [ngClass]="{ active: activeTab === 'bot'}" (click)="activeTab='bot'"
               aria-controls="nav-home" aria-selected="true">QonvoBot</a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-              aria-controls="nav-profile" aria-selected="false">Preview</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" [ngClass]="{ active: activeTab === 'preview'}"
+              aria-controls="nav-profile" aria-selected="false" (click)="activeTab='preview'">Preview</a>
           </div>
         </nav>
-        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent" >
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="p-3">
               <div class="body border-rounded p-3">
                 <div class="response-body bg-white border-rounded" style="min-height: 200px; height: 100%;">
                   <div class="chat-section response-body bg-white border-rounded">
-
-                    <div class="chat-container">
+                    <div class="chat-container" *ngIf="activeTab !== 'preview'">
                       <div *ngFor="let message of chatHistory" class="chat-message">
                         <div class="user-message">
                           <span class="username">User:</span>
@@ -68,11 +67,11 @@
 
           </div>
 
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="response-body bg-white border-rounded tab-pane fade" style="min-height: 200px; height: 100%;" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" *ngIf="activeTab === 'preview'">
             preview tab
           </div>
 
-          <div class="px-3 mb-3 action-panel">
+          <div class="px-3 mb-3 action-panel"  *ngIf="activeTab !== 'preview'">
             <div class="action-button d-flex align-items-center justify-content-end">
               <div class="icon">
                 <i class="fa-regular fa-thumbs-up"></i>

@@ -8,15 +8,17 @@ import { Component, HostListener } from '@angular/core';
 export class ChatbotUiComponent {
 textContent:string='';
 chatHistory: { userMessage: string, botResponse: string }[] = [];
-userMessage: string = '';
+userMessage: any = '';
 botResponse: string = '';
 activeSelect: number=3;
+activeTab='bot'
 servicesName:string='Web Testing';
 navigateToScheduled(type:any){
   this.activeSelect=type;
  }
 services:any = ['Service Virtualization','API Monitoring','Rover','Web Testing','Desktop Testing','Device Farm','API Testing','Mobile Testing','Component','Webpage Performance']
 sendMessage() {
+  this.activeTab='bot'
   this.botResponse = this.generateFakeBotResponse(this.userMessage);
   this.chatHistory.push({ userMessage: this.userMessage, botResponse: this.botResponse });
   this.userMessage = '';
@@ -30,6 +32,9 @@ getService(service:string){
   this.servicesName=service
 }
 selectActive(index:any){
+  if(this.activeSelect!==index){
+    this.chatHistory=[]
+  }
   this.activeSelect=index;
  }
 // getAllCreateProject(data: any, serviceName: string,teamId:number) {
