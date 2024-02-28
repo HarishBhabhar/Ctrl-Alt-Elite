@@ -1,0 +1,145 @@
+<div class="container-fluid bg-dark p-3">
+  <div class="row">
+    <div class="left-sidebar">
+
+      <h3 class="text-white mb-4">MindMerge</h3>
+
+      <ul class="text-white">
+        <li class="active">Web Automation</li>
+        <li class="">Desktop Testing</li>
+      </ul>
+
+      <Footer>log out</Footer>
+
+    </div>
+    <div class="col">
+      <div class="border-rounded bg-white h-95">
+        <header class="py-3 px-2 mb-1">
+          <span class="title">AI Chat Helper</span>
+        </header>
+
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+              aria-controls="nav-home" aria-selected="true">Home</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false">Profile</a>
+          </div>
+        </nav>
+        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="p-3">
+              <div class="body border-rounded p-3">
+                <div class="response-body bg-white border-rounded mb-3" style="min-height: 200px; height: 100%;">
+                  <div class="chat-section response-body bg-white border-rounded">
+
+                    <div class="chat-container">
+                      <div *ngFor="let message of chatHistory" class="chat-message">
+                        <div class="user-message">
+                          <span class="username">User:</span>
+                          <span>{{ message.userMessage }}</span>
+                        </div>
+                        <div class="bot-message">
+                          <span class="username">Bot:</span>
+                          <span>{{ message.botResponse }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <p class="note"> Note: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
+                    repudiandae iure at
+                    facere expedita ex ratione consectetur? Fugit officiis aperiam fugiat expedita, minima quia
+                    qui
+                    molestiae ipsam tempora eius aspernatur.
+                  </p> -->
+                   <!--  <div class="d-flex justify-content-between align-items-cente">
+                  <div class="bg-white px-2 py-1 shadow-sm rounded">I have created project</div> -->
+                    <!-- <div class="bg-white px-2 py-1 shadow-sm rounded"><i class="fa-solid fa-up-right-from-square"></i>
+                      View
+                    </div>
+                  </div>-->
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              preview tab
+            </div>
+
+          </div>
+
+
+          <div class="px-3 mb-3">
+            <div class="action-button d-flex align-items-center justify-content-end">
+              <div class="icon">
+                <i class="fa-regular fa-thumbs-up"></i>
+              </div>
+              <div class="icon">
+                <i class="fa-regular fa-thumbs-down"></i>
+              </div>
+              <div class="icon">
+                <i class="fa-regular fa-copy"></i>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div
+                class="shadow-sm border-rounded d-inline-flex justify-content-center align-items-center w-auto mx-auto px-3 py-1">
+                <i class="fa-solid fa-rotate-right mr-2"></i>
+                Regenerate response
+              </div>
+            </div>
+          </div>
+
+          <div class="type-message d-flex align-items-center justify-content-between mb-4 px-3">
+            <div class="d-flex">
+              <div class="icon">
+                <i class="fa-regular fa-file-lines"></i>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-microphone"></i>
+              </div>
+            </div>
+
+            <input class="p-1 d-flex justify-content-center chatInput" type="text" [(ngModel)]="userMessage"
+              (keyup.enter)="sendMessage()">
+            <button type="submit" class="button btn submit ml-2"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="col-2">
+        <ul class="status-bar">
+          <li class="status done">
+            <div class="icon">
+              <i class="fa-solid fa-check"></i>
+
+            </div>
+            Created
+          </li>
+          <li class="status">
+            <div class="icon">
+              <i class="fa-solid fa-check"></i>
+
+            </div>
+            Created
+          </li>
+          <li class="status">
+            <div class="icon">
+              <i class="fa-solid fa-check"></i>
+
+            </div>
+            Created
+          </li>
+          <li class="status">
+            <div class="icon">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            Created
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
