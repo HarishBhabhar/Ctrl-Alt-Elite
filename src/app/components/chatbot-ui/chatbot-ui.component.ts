@@ -7,15 +7,16 @@ import { Component, HostListener } from '@angular/core';
 })
 export class ChatbotUiComponent {
 textContent:string='';
-@HostListener('document:keydown.enter',['$event'])
-handleEnterKey(event:KeyboardEvent){
-  this.submitText()
+chatHistory: { userMessage: string, botResponse: string }[] = [];
+userMessage: string = '';
+botResponse: string = '';
+sendMessage() {
 
-}
-submitText(){
-  if(this.textContent.trim() !==''){
-    console.log('data--->',this.textContent)
-    this.textContent=''
-  }
+  this.botResponse = this.generateFakeBotResponse(this.userMessage);
+  this.chatHistory.push({ userMessage: this.userMessage, botResponse: this.botResponse });
+  this.userMessage = '';}
+
+generateFakeBotResponse(userMessage: string): string {
+  return "I'm a fake bot response to: " + userMessage;
 }
 }
