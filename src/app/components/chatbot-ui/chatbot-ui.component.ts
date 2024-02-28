@@ -10,17 +10,28 @@ textContent:string='';
 chatHistory: { userMessage: string, botResponse: string }[] = [];
 userMessage: string = '';
 botResponse: string = '';
-services = ['Service Virtualization','API Monitoring','Rover','Web Testing','Desktop Testing','Device Farm','API Testing','Mobile Testing','Component','Webpage Performance']
+activeSelect: number=3;
+servicesName:string='Web Testing';
+navigateToScheduled(type:any){
+  this.activeSelect=type;
+ }
+services:any = ['Service Virtualization','API Monitoring','Rover','Web Testing','Desktop Testing','Device Farm','API Testing','Mobile Testing','Component','Webpage Performance']
 sendMessage() {
-
   this.botResponse = this.generateFakeBotResponse(this.userMessage);
   this.chatHistory.push({ userMessage: this.userMessage, botResponse: this.botResponse });
-  this.userMessage = '';}
+  this.userMessage = '';
+
+}
 
 generateFakeBotResponse(userMessage: string): string {
   return "I'm a fake bot response to: " + userMessage;
 }
-
+getService(service:string){
+  this.servicesName=service
+}
+selectActive(index:any){
+  this.activeSelect=index;
+ }
 // getAllCreateProject(data: any, serviceName: string,teamId:number) {
 //   switch (serviceName) {
 //     case 'API Monitoring':
